@@ -28,4 +28,17 @@ void overloadingInfo() {
     println value - "is "
     println value + '.'
     println value - 'is '
+
+    println value - 'is ' - "is"
+
+    println value * 3;
+
+    println value[0]
+    println value[0..3]
+    println value[-7..-1]
+    println value[-1..-15]
+    println value[0..3,5,6,8..-1]
+
+    def reverse = value[-1..-15]
+    println reverse
 }
