@@ -7,6 +7,9 @@ typeInfo()
 stringInfo()
 overloadingInfo()
 pogoInfo()
+listandrangeInfo()
+mapandsetInfo()
+closureInfo()
 
 void greet(String greeting) {
     println greeting;
@@ -88,6 +91,55 @@ void pogoInfo() {
 
     Hobbies hobbies = new Hobbies("Baseball", "Basketball")
     println hobbies.toString()
+}
+
+void listandrangeInfo() {
+    Range r = 1..10
+
+    List nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2]
+
+    println r
+    println r.from
+    println r.to
+    println r.contains(0)
+    println r.contains(10)
+    println nums - 1
+    println nums - 0 - 1 - 2
+    println nums + [7, 8]
+    println nums << [7, 8]
+
+    10.downto(7, {println it})
+    10.downto(5) {println it}
+}
+
+void mapandsetInfo() {
+    def map = [a:1, b:2, c:3, d:4]
+    def cityMap = ["Dallas":1, "Chicago":2, "Los Angeles":3, "New Orleans":4] as LinkedHashMap
+
+    map.put('e', 5)
+    map['f'] = 6
+
+    println map
+    println cityMap
+    println cityMap.getClass().getName()
+    println cityMap.getClass().getCanonicalName()
+}
+
+void closureInfo() {
+    def cityMap = ["Dallas", "Chicago", "Los Angeles", "New Orleans"] as LinkedList
+
+    cityMap.forEach{city -> println city}
+    cityMap.forEach(city -> println city)
+
+    cityMap.each {println it }
+
+    cityMap.eachWithIndex{ String entry, int i ->
+        println "cityMap[$i] = $entry"
+    }
+
+    cityMap.eachWithIndex{ String entry, int i ->
+        println "cityMap[${i}] = ${entry}"
+    }
 }
 
 class Automobile {
